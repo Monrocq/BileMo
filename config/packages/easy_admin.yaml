@@ -1,0 +1,12 @@
+easy_admin:
+    site_name: Liste des utilisateurs
+    entities:
+        Utilisateur:
+          class: App\Entity\Utilisateur
+          list:
+            title: Renseignez le client et validez pour lister les utilisateurs rattachés -->
+            fields: [{ property: 'client.nom', label: 'Client' }, 'id', 'prenom', 'patronyme', 'pseudo', 'email', { property: 'createdAt', label: 'Date de création' }, 'tel']
+          search:
+            fields: ['client.nom']
+            placeholder: Nom du client
+    disabled_actions: ['show', 'new', 'edit', 'delete']

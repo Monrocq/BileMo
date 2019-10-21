@@ -157,4 +157,9 @@ class Client implements UserInterface
     public function eraseCredentials() {
         // TODO: Implement eraseCredentials() method.
     }
+
+    public function __toString()
+    {
+        return (string) $this->nom;
+    }
 }
