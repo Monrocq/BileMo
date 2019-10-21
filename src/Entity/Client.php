@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use ApiPlatform\Core\Annotation\ApiSubresource;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ApiResource(
@@ -18,7 +19,8 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
  * @UniqueEntity("nom")
  */
-class Client
+class Client implements UserInterface
+
 {
     /**
      * @ORM\Id()
@@ -47,6 +49,11 @@ class Client
      * @ApiSubResource
      */
     private $utilisateurs;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=false)
+     */
+    private $password;
 
     public function __construct()
     {
@@ -123,5 +130,31 @@ class Client
         }
 
         return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(?string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getRoles() {
+        return ['ROLE_USER'];
+    }
+    
+    public function getSalt() {
+        return null;
+    }
+    public function getUsername() {
+        return $this->getNom();
+    }
+    public function eraseCredentials() {
+        // TODO: Implement eraseCredentials() method.
     }
 }
