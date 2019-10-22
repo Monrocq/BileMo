@@ -17,3 +17,16 @@ framework:
         # Namespaced pools use the above "app" backend by default
         #pools:
             #my.dedicated.cache: null
+
+fos_http_cache:
+    cache_control:
+        defaults:
+            overwrite: true
+        rules:
+            -
+                match:
+                    path: ^/
+                headers:
+                    cache_control: { public: true, max_age: 3600, s_maxage: 3600 }
+                    etag: "strong"
+                    vary: [Accept-Encoding, Accept-Language, Authorization, Content-Type]
