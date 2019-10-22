@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class ApiController extends AbstractController
@@ -30,6 +31,7 @@ class ApiController extends AbstractController
         $data = $request->getContent();
         $user = $this->serializer->deserialize($data, Utilisateur::class, 'json');
         $user->setClient($client);
+        $user->setCreatedAt(new \DateTime('now'));
         $errors = $this->validator->validate($user);
         if (count($errors)) {
             $errors = $this->serializer->serialize($errors, 'json');
