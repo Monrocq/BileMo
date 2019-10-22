@@ -42,9 +42,9 @@ class AppFixtures extends Fixture
         $manager->persist($product1);
         $manager->persist($product2);
         $customer = new Client();
-        $customer->setNom("Capgemini");
+        $customer->setNom("Capgemini"); //Set your Username
         $customer->setContact("contact@capgemini.fr");
-        $customer->setPassword($this->encoder->encodePassword($customer, $customer->getNom()));
+        $customer->setPassword($this->encoder->encodePassword($customer, $customer->getNom())); //Or set your Password
         $manager->persist($customer);
         $user = new Utilisateur();
         $user->setClient($customer);
