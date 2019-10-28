@@ -52,31 +52,31 @@ class Produit
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      */
     private $stockage;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      */
     private $os;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      */
     private $resolution;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      */
     private $reseau;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      */
     private $batterie;
 
@@ -88,7 +88,7 @@ class Produit
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Couleur", inversedBy="produits")
-     * @Groups({"list", "show"})
+     * @Groups({"show"})
      * @ApiSubresource
      */
     private $couleur;

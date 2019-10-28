@@ -14,4 +14,20 @@ L'estimation correspondant à la réalisation des Issues est disponible sur [mon
 
 Là aussi, les estimations indiqués ont été donnés par rapport à mes capacités et mes connaissances. Ces durées peuvent varier d'un individu à un autre autre.
 ## Etat actuel du projet
-**En cours d'élaboration**
+**En cours de validation**
+## Médail obtenue
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8551a81cef1b446181c61a122c698bee)](https://www.codacy.com/manual/Monrocq/BileMo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Monrocq/BileMo&amp;utm_campaign=Badge_Grade)
+## Installation
+1. Clone the repository in your local path
+2. Go to your local path with the command prompt after to have [composer](https://getcomposer.org/download/)/[PHP](https://www.php.net/manual/fr/install.php)/[MySQL](https://openclassrooms.com/fr/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1959969-installez-mysql)
+  ```
+  //Install dependances
+  composer install
+  //Create Database
+  php bin/console doctrine:database:create
+  //Install Architecture
+  php bin/console doctrine:schema:create
+  //Init fixtures to test the API if you want
+  php bin/console doctrine:fixtures:load
+  ```
+3. You can navigate on the project with [XAMPP](https://www.apachefriends.org/fr/index.html)||[LAMP](https://doc.ubuntu-fr.org/lamp)||[MAMP](https://www.mamp.info/en/)||[WAMP](http://www.wampserver.com) thanks to [the documentation](https://docs.google.com/document/d/1LgxRb76wPP7HfCm4asfJpHhXJ713WnRwPS0EvJi1Ixs/edit?usp=sharing) - ENJOY !
