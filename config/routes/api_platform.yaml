@@ -1,0 +1,9 @@
+post:
+  path: /api/{id}/utilisateurs
+  methods: POST
+  controller: App\Controller\ApiController::addUser
+
+api_platform:
+    resource: .
+    type: api_platform
+    prefix: /api
