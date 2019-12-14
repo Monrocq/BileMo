@@ -10,10 +10,16 @@ use ApiPlatform\Core\Annotation\ApiProperty;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     collectionOperations={"GET"},
+ *     collectionOperations={
+ *          "get_collection"={
+ *              "method"="GET",
+ *              "normalization_context"={"groups"={"filter"}}
+ *          }
+ *     },
  *     itemOperations={"GET"}
  * )
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
@@ -26,26 +32,31 @@ class Client implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"filter"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"filter"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"filter"})
      */
     private $partnerAt;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"filter"})
      */
     private $contact;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Utilisateur", mappedBy="client", orphanRemoval=true)
+     * @Groups({"filter"})
      * @ApiSubResource
      */
     private $utilisateurs;
