@@ -84,7 +84,7 @@ class Produit
      * @ORM\Column(type="float")
      * @Groups({"list", "show"})
      */
-    private $prix;
+    //private $prix;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Couleur", inversedBy="produits")
@@ -175,6 +175,7 @@ class Produit
         return $this;
     }
 
+    /*
     public function getPrix(): ?float
     {
         return $this->prix;
@@ -186,6 +187,7 @@ class Produit
 
         return $this;
     }
+    */
 
     /**
      * @return Collection|Couleur[]
