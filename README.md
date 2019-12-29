@@ -14,7 +14,7 @@ L'estimation correspondant à la réalisation des Issues est disponible sur [mon
 
 Là aussi, les estimations indiqués ont été donnés par rapport à mes capacités et mes connaissances. Ces durées peuvent varier d'un individu à un autre autre.
 ## Etat actuel du projet
-**En cours de validation**
+**Projet validé**
 ## Médail obtenue
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8551a81cef1b446181c61a122c698bee)](https://www.codacy.com/manual/Monrocq/BileMo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Monrocq/BileMo&amp;utm_campaign=Badge_Grade)
 ## Installation
